@@ -101,9 +101,7 @@ function TodoPage() {
           done={true}
           onStatusChange={markAsNotDone}
           onDelete={onTodoDelete}
-        >
-          {" "}
-        </TodoRow>
+        /> 
       ))}
     </div>
   );
