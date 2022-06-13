@@ -1,8 +1,14 @@
-import React from "react";
-import TodoPage from "./TodoPage";
+import { FC } from "react";
+import TodoRow from "./Components/TodoRow";
 
-function App() {
-  return <TodoPage />;
-}
+const todoObj = {
+  id: 1,
+  title: "goo kha",
+  done: false,
+};
+
+const App: FC = () => {
+  return <TodoRow todo={todoObj} />;
+};
 
 export default App;
