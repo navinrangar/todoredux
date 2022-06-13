@@ -1,11 +1,14 @@
-import React from "react";
+import { HTMLAttributes, FC, memo } from "react";
+import cn from "classnames";
 
-function H2(props: any) {
+type H2Props = HTMLAttributes<HTMLHeadingElement>;
+
+const H2: FC<H2Props> = ({ children, className }) => {
   return (
     <>
-      <h2 className="font-semibold text-2xl px-9 py-8"> {props.children} </h2>
+      <h2 className={cn("font-semibold text-2xl", className)}>{children}</h2>
     </>
   );
-}
+};
 
-export default H2;
+export default memo(H2);

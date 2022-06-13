@@ -1,16 +1,16 @@
 import { FC, memo } from "react";
 import Checkbox from "./Checkbox";
 import { RiDeleteBin5Fill } from "react-icons/ri";
-import { todoType } from "../Models/todo";
+import { todoType } from "../Models/todoType";
 import cn from "classnames";
 
-type todoProps = {
+type todoRowProps = {
   todo: todoType;
 };
 
 // // onStatusChange= (id: number, done: boolean)=> void
 
-const TodoRow: FC<todoProps> = ({ todo }) => {
+const TodoRow: FC<todoRowProps> = ({ todo }) => {
   const { done, title, id } = todo;
   //done, todo, title, id, onDelete, onStatusChange
   const onCheckboxChange = () => {
