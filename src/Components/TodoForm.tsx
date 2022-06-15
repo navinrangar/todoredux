@@ -1,19 +1,36 @@
-import React from "react";
+import { ChangeEvent, memo, FC, useState } from "react";
 import H1 from "./H1";
 import Button from "./Button";
 import Input from "./Input";
+import { connect } from "react-redux";
+import { TODO_ADD } from "../actions/actions";
+import { todoAddAction } from "../actions/actions";
 
-function TodoForm(props: any) {
-  const [inputValue, setInputValue] = React.useState("");
+type TodoFormProps = {
+  onSubmit: (todoText: string) => void;
+};
 
-  const onInputChange = (event: any) => {
-    setInputValue(event.target.value);
+const TodoForm: FC<TodoFormProps> = ({ onSubmit }) => {
+  const [inputValue, setInputValue] = useState("");
+
+  // const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+    onSubmit(inputValue);
+    // dispatch(todoAddAction(inputValue));
+    setInputValue("");
+  };
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value !== "") {
+      setInputValue(event.target.value);
+    }
   };
 
   function saveTodo() {
-    props.onCreate(inputValue);
+    // props.onCreate(inputValue);
     setInputValue("");
-    props.onClose();
+    // props.onClose();
   }
 
   return (
@@ -21,24 +38,20 @@ function TodoForm(props: any) {
       <H1> Create a ToDo </H1>
       <Input
         value={inputValue}
-        onChange={onInputChange}
+        onChange={handleInputChange}
         class="p-2 m-8 w-96 border border-black "
         placeholder="eg. write a blog post for this week."
       />
 
       <div className="flex">
-        <Button type="save" onClick={saveTodo}>
-          {" "}
-          Save{" "}
+        <Button type="save" onClick={handleSubmit}>
+          Save
         </Button>
 
-        <Button type="cancel" onClick={props.onClose}>
-          {" "}
-          Cancel{" "}
-        </Button>
+        <Button type="cancel"> Cancel </Button>
       </div>
     </div>
   );
-}
+};
 
-export default TodoForm;
+export default connect(undefined, { onSubmit: todoAddAction })(memo(TodoForm));
