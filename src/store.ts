@@ -9,8 +9,6 @@ export type State = {
 
 // const savedTodos= localStorage.getItem('todos');
 
-let nextId = 1;
-
 const initialState: State = {
   todos: [],
 };
@@ -31,9 +29,7 @@ const reducer: Reducer<State> = (state = initialState, action) => {
     }
 
     case TODO_ADD: {
-      const todoText = action.payload;
-      const todo: todoType = { id: nextId, title: todoText, done: false };
-      nextId++;
+      const todo: todoType = action.payload;
       return { ...state, todos: [...state.todos, todo] };
     }
 
