@@ -1,16 +1,20 @@
 import { Reducer, createStore } from "redux";
 import {} from "react";
-import { TODO_ADD, TODO_STATUS_CHANGE } from "./actions/actions";
+import { TODO_ADD, TODO_STATUS_CHANGE } from "./actions/todos";
 import { todoType } from "./models/todoType";
+import { userType } from "./models/userType";
+import { USER_ADD } from "./actions/users";
 
 export type State = {
   todos: todoType[];
+  users: userType[];
 };
 
 // const savedTodos= localStorage.getItem('todos');
 
 const initialState: State = {
   todos: [],
+  users: [],
 };
 
 const reducer: Reducer<State> = (state = initialState, action) => {
@@ -31,6 +35,11 @@ const reducer: Reducer<State> = (state = initialState, action) => {
     case TODO_ADD: {
       const todo: todoType = action.payload;
       return { ...state, todos: [...state.todos, todo] };
+    }
+
+    case USER_ADD: {
+      const user: userType = action.payload;
+      return { ...state, users: [...state.users, user] };
     }
 
     default:

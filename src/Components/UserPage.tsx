@@ -3,9 +3,9 @@ import H2 from "./H2";
 import TodoForm from "./TodoForm";
 import { IncompleteTodoList, CompleteTodoList } from "./TodoList";
 
-type TodoPageProps = {};
+type UserPageProps = {};
 
-const TodoPage: FC<TodoPageProps> = (props) => {
+const UserPage: FC<UserPageProps> = (props) => {
   return (
     <>
       <div className="p-5">
@@ -19,6 +19,6 @@ const TodoPage: FC<TodoPageProps> = (props) => {
   );
 };
 
-TodoPage.defaultProps = {};
+UserPage.defaultProps = {};
 
-export default memo(TodoPage);
+export default memo(UserPage);

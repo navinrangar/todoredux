@@ -7,8 +7,8 @@ import {
 import { State } from "../store";
 import TodoRow from "./TodoRow";
 import { connect, useDispatch } from "react-redux";
-import { TODO_STATUS_CHANGE } from "../actions/actions";
-import { todoStatusChangeAction } from "../actions/actions";
+import { TODO_STATUS_CHANGE } from "../actions/todos";
+import { todoStatusChangeAction } from "../actions/todos";
 
 type TodoListProps = {
   todos: todoType[];

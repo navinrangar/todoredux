@@ -8,16 +8,28 @@ import TodoList, {
 import { todoType } from "./models/todoType";
 import { useSelector } from "react-redux";
 import TodoForm from "./components/TodoForm";
+import { Routes, Route } from "react-router";
+import TodoPage from "./components/TodoPage";
+import UserPage from "./components/UserPage";
+import { Link } from "react-router-dom";
 
 const App: FC = () => {
   return (
-    <div className="p-5">
-      <H2 className="ml-4 mb-2"> Things to do </H2>
-      <IncompleteTodoList />
-      <TodoForm />
-      <H2 className="ml-4"> Things to do </H2>
-      <CompleteTodoList />
-    </div>
+    <>
+      <div className="p-5 font-bold text-3xl">
+        <li className="space-x-3 flex">
+          <Link to="/">
+            <ul> Todos </ul>
+          </Link>
+          <Link to="/users">
+            <ul> Users </ul>
+          </Link>
+        </li>
+      </div>
+      <Routes>
+        <Route index element={<TodoPage />} />
+      </Routes>
+    </>
   );
 };
 

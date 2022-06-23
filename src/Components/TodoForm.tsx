@@ -3,8 +3,8 @@ import H1 from "./H1";
 import Button from "./Button";
 import Input from "./Input";
 import { connect } from "react-redux";
-import { TODO_ADD } from "../actions/actions";
-import { todoAddAction } from "../actions/actions";
+import { TODO_ADD } from "../actions/todos";
+import { todoAddAction } from "../actions/todos";
 
 type TodoFormProps = {
   onSubmit: (todoText: string) => void;
