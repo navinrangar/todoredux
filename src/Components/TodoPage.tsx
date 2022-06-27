@@ -1,4 +1,5 @@
 import { FC, memo } from "react";
+import { Link } from "react-router-dom";
 import H2 from "./H2";
 import TodoForm from "./TodoForm";
 import { IncompleteTodoList, CompleteTodoList } from "./TodoList";
@@ -14,6 +15,7 @@ const TodoPage: FC<TodoPageProps> = (props) => {
         <TodoForm />
         <H2 className="ml-4"> Things done! </H2>
         <CompleteTodoList />
+        <Link to="/"> Go Home!</Link>
       </div>
     </>
   );

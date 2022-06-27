@@ -22,9 +22,7 @@ const TodoForm: FC<TodoFormProps> = ({ onSubmit }) => {
   };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if (event.target.value !== "") {
-      setInputValue(event.target.value);
-    }
+    setInputValue(event.target.value);
   };
 
   function saveTodo() {

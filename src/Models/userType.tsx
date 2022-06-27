@@ -1,4 +1,5 @@
 export type userType = {
   id: number;
-  name: string;
+  fName: string;
+  lName: string;
 };

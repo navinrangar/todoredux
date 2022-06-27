@@ -5,8 +5,8 @@ function Input(props: any) {
     <input
       value={props.value}
       onChange={props.onChange}
-      className="p-2 m-8 w-96 border border-black "
-      placeholder="eg. write a blog post for this week."
+      className="w-96 border border-black"
+      placeholder={props.placeholder}
     />
   );
 }
