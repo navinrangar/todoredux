@@ -28,10 +28,10 @@ const App: FC = () => {
         <div className="p-5 font-bold text-3xl">
           <li className="space-x-3 flex">
             <Link to="/todos">
-              <ul> Todos </ul>
+              <ul className="hover:text-sky-400"> Todos </ul>
             </Link>
             <Link to="/users">
-              <ul> Users </ul>
+              <ul className="hover:text-sky-400"> Users </ul>
             </Link>
           </li>
         </div>
